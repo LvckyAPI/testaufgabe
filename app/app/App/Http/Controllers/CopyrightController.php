@@ -16,11 +16,16 @@ class CopyrightController extends Controller
 
     // Generated with http://www.network-science.de/ascii/
     const COPYRIGHT = "
- ___       _   _  _ _  ___  _  _  __  _   _  ___  __  _   _     __          _ _
-| o )__   | \_/ || | || __|| \| |/ _|| \_/ || __||  \| | / \   / _|  _ _ ||| U |
-| o \\ V7 | \_/ || U || _| | \\ |\_ \| \_/ || _| | o ) || o | ( |_n|/ \ \|o\   |
-|___/ )/  |_| |_||___||___||_|\_||__/|_| |_||___||__/|_||_n_|  \__/L_n_n||_/_n_|
-     //
+    ________      ___    ___      ___       ___      ___ ________  ___  __        ___    ___ ________  ________  ___     
+    |\   __  \    |\  \  /  /|    |\  \     |\  \    /  /|\   ____\|\  \|\  \     |\  \  /  /|\   __  \|\   __  \|\  \    
+    \ \  \|\ /_   \ \  \/  / /    \ \  \    \ \  \  /  / | \  \___|\ \  \/  /|_   \ \  \/  / | \  \|\  \ \  \|\  \ \  \   
+     \ \   __  \   \ \    / /      \ \  \    \ \  \/  / / \ \  \    \ \   ___  \   \ \    / / \ \   __  \ \   ____\ \  \  
+      \ \  \|\  \   \/  /  /        \ \  \____\ \    / /   \ \  \____\ \  \\ \  \   \/  /  /   \ \  \ \  \ \  \___|\ \  \ 
+       \ \_______\__/  / /           \ \_______\ \__/ /     \ \_______\ \__\\ \__\__/  / /      \ \__\ \__\ \__\    \ \__\
+        \|_______|\___/ /             \|_______|\|__|/       \|_______|\|__| \|__|\___/ /        \|__|\|__|\|__|     \|__|
+                 \|___|/                                                         \|___|/                                  
+                                                                                                                          
+          
         ";
 
     static public function getCopyright(): string
@@ -30,6 +35,6 @@ class CopyrightController extends Controller
 
     static public function showCopyright(): Response
     {
-        return response( self::getCopyright() )->header('Content-Type', 'text/plain');
+        return response(self::getCopyright())->header('Content-Type', 'text/plain');
     }
 }
