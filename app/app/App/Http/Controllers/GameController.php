@@ -52,41 +52,23 @@ class GameController extends Controller
         // remove spaces and line breaks ;)
         // =============================================================================================================
 
-        if (    // Check the first row
-            $game->getRow(0)->getSpace(0) === $game->getRow(0)->getSpace(1) &&
-            $game->getRow(0)->getSpace(0) === $game->getRow(0)->getSpace(2) &&
-            $game->getRow(0)->getSpace(0) !== GameMark::None
-        ) return true;
+        // check all Rows
+        foreach ($game->getRows() as $key => $value) {
+            if ( 
+                $value->getSpace(0) === $value->getSpace(1) &&
+                $value->getSpace(0) === $value->getSpace(2) &&
+                $value->getSpace(0) !== GameMark::None
+            ) return true;
+        }
 
-        if (    // Check the second row
-            $game->getRow(1)->getSpace(0) === $game->getRow(1)->getSpace(1) &&
-            $game->getRow(1)->getSpace(0) === $game->getRow(1)->getSpace(2) &&
-            $game->getRow(1)->getSpace(0) !== GameMark::None
-        ) return true;
-
-        if (    // Check the third row
-            $game->getRow(2)->getSpace(0) === $game->getRow(2)->getSpace(1) &&
-            $game->getRow(2)->getSpace(0) === $game->getRow(2)->getSpace(2) &&
-            $game->getRow(2)->getSpace(0) !== GameMark::None
-        ) return true;
-
-        if (    // Check the first column
-            $game->getColumn(0)->getSpace(0) === $game->getColumn(0)->getSpace(1) &&
-            $game->getColumn(0)->getSpace(0) === $game->getColumn(0)->getSpace(2) &&
-            $game->getColumn(0)->getSpace(0) !== GameMark::None
-        ) return true;
-
-        if (    // Check the second column
-            $game->getColumn(1)->getSpace(0) === $game->getColumn(1)->getSpace(1) &&
-            $game->getColumn(1)->getSpace(0) === $game->getColumn(1)->getSpace(2) &&
-            $game->getColumn(1)->getSpace(0) !== GameMark::None
-        ) return true;
-
-        if (    // Check the third column
-            $game->getColumn(2)->getSpace(0) === $game->getColumn(2)->getSpace(1) &&
-            $game->getColumn(2)->getSpace(0) === $game->getColumn(2)->getSpace(2) &&
-            $game->getColumn(2)->getSpace(0) !== GameMark::None
-        ) return true;
+        // check all Colums
+        foreach ($game->getColumns() as $key => $value) {
+            if (
+                $value->getSpace(0) === $value->getSpace(1) &&
+                $value->getSpace(0) === $value->getSpace(2) &&
+                $value->getSpace(0) !== GameMark::None
+            ) return true;
+        }
 
         if (    // Check the main diagonal
             $game->getMainDiagonal(0)->getSpace(0) === $game->getMainDiagonal(0)->getSpace(1) &&
