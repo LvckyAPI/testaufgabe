@@ -40,6 +40,24 @@ An einigen Stellen `(1), (2), (3), (4), (5), (6), (7)` war sich dein zukünftige
 
 ![tic-tac-toe-struktogramm](./docs/tic-tac-toe-struktogramm.jpg)
 
+### Lösungen:
+```ts
+#(1)
+    false
+#(2)
+    'Spiel unentschieden'
+#(3)
+    true
+#(4)
+    'Spiel beendet es gibt einen Gewinner'
+#(5)
+    true
+#(6)
+    false
+#(7)
+    true
+```
+
 ## 2.) Programmierung vorbereiten
 Nachdem Du jetzt weißt, wie Tic-Tac-Toe funktioniert, wollen wir zusammen programmieren.  
 Keine Sorge, wenn Du bislang nur wenig oder gar nicht programmiert hast, wir steigern uns langsam 😉  
